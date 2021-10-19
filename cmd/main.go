@@ -26,6 +26,37 @@ func main()  {
 	})
 
 	server.Run()
+
 }
 
+
+//package main
+//
+//import (
+//	"crypto/hmac"
+//	"crypto/sha1"
+//	"crypto/subtle"
+//	"encoding/hex"
+//	"fmt"
+//	"os"
+//)
+//
+//func generateSignature(secretToken, payloadBody string) string {
+//	mac := hmac.New(sha1.New, []byte(secretToken))
+//	mac.Write([]byte(payloadBody))
+//	expectedMAC := mac.Sum(nil)
+//	return "sha1=" + hex.EncodeToString(expectedMAC)
+//}
+//
+//func verifySignature(secretToken, payloadBody string, signatureToCompareWith string) bool {
+//	signature := generateSignature(secretToken, payloadBody)
+//	return subtle.ConstantTimeCompare([]byte(signature), []byte(signatureToCompareWith)) == 1
+//}
+//
+//func main() {
+//	testPayloadBody := `{"message":"test content"}`
+//	testSignatureToCompareWith := `sha1=33a08e9b5e9c8d5e944d9288e9b499abb298344d`
+//
+//	fmt.Println("signature match? :", verifySignature(os.Getenv("SECRET_TOKEN"), testPayloadBody, testSignatureToCompareWith))
+//}
 

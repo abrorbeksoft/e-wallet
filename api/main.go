@@ -30,6 +30,7 @@ func New(options *RouterOptions) *gin.Engine {
 	{
 		// customers
 		apiV1.GET("/hello", handlerV1.Hello)
+		apiV1.POST("/allwallets",handlerV1.AllWallets)
 	}
 
 	return router

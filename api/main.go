@@ -28,7 +28,10 @@ func New(options *RouterOptions) *gin.Engine {
 
 	apiV1.Use()
 	{
-		// customers
+		//auth
+		apiV1.POST("/login",handlerV1.Login)
+		apiV1.POST("/register",handlerV1.Register)
+
 		apiV1.GET("/hello", handlerV1.Hello)
 		apiV1.POST("/allwallets",handlerV1.AllWallets)
 		apiV1.POST("/getwallet",handlerV1.GetWallet)

@@ -9,6 +9,7 @@ type StorageI interface {
 	AddMoney(id string,amount int64) (bool, string)
 	RemoveMoney(id string,amount int64) (bool, string)
 	AllWallets(id string) []models.Wallet
+	// auth
+	CreateUser(user *models.CreateUser) (string,error)
+	GetUser(username string) (*models.User, error)
 }
-
-

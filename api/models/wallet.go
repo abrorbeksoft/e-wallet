@@ -5,5 +5,6 @@ type Wallet struct {
 	Type string `json:"type"`
 	Amount int64 `json:"amount"`
 	UserId string `json:"user_id"`
-	Identified bool `json:"identified"`
+	CreatedAt string `json:"created_at"`
+	UpdatedAt string `json:"updated_at"`
 }

@@ -1,9 +1,12 @@
 package api
 
 import (
+	_ "github.com/abrorbeksoft/e-wallet.git/api/docs"
 	v1 "github.com/abrorbeksoft/e-wallet.git/api/handlers/v1"
 	"github.com/abrorbeksoft/e-wallet.git/storage"
 	"github.com/gin-gonic/gin"
+	"github.com/swaggo/files"       // swagger embed files
+	"github.com/swaggo/gin-swagger" // gin-swagger middleware
 	"net/http"
 )
 
@@ -32,13 +35,15 @@ func New(options *RouterOptions) *gin.Engine {
 		apiV1.POST("/login",handlerV1.Login)
 		apiV1.POST("/register",handlerV1.Register)
 
-		apiV1.GET("/hello", handlerV1.Hello)
-		apiV1.POST("/allwallets",handlerV1.AllWallets)
-		apiV1.POST("/getwallet",handlerV1.GetWallet)
-		apiV1.POST("/addmoney",handlerV1.AddMoney)
-		apiV1.POST("/removemoney",handlerV1.RemoveMoney)
-		apiV1.POST("/paymenthistory",handlerV1.GetMonthlyPayment)
+		apiV1.GET("/hello", v1.Auth(), handlerV1.Hello)
+		apiV1.POST("/allwallets", v1.Auth(),handlerV1.AllWallets)
+		apiV1.POST("/getwallet", v1.Auth(), handlerV1.GetWallet)
+		apiV1.POST("/addmoney",  v1.Auth(), handlerV1.AddMoney)
+		apiV1.POST("/removemoney", v1.Auth(), handlerV1.RemoveMoney)
+		apiV1.POST("/paymenthistory", v1.Auth(), handlerV1.GetMonthlyPayment)
+		apiV1.POST("/createwallet", v1.Auth(), handlerV1.CreateWallet)
 	}
 
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	return router
 }

@@ -18,3 +18,17 @@ type CreateUser struct {
 	Password string `json:"password"`
 	Email string `json:"email"`
 }
+
+type LoginUser struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type SuccessMessage struct {
+	Message string `json:"message"`
+	Token string `json:"token"`
+}
+
+type ErrorMessage struct {
+	Message string `json:"message"`
+}

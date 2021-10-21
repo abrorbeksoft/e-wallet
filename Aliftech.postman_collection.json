@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "c12f4719-94b7-4696-b305-73b7ed89e514",
+		"name": "Aliftech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all wallets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-UserId",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQ3OTg1OTUsImlkIjoiMDRkMTAzMTctOGUxYi00MGI0LWE1MDUtNmVjNTFlYzlhZTQ1IiwibG9naW4iOiJKdXJheWV2In0.Wn5bZajyU7oLOH3RrjpMB1fzmmTd-hw1dGvhLFMbEoM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userId",
+							"value": "92b42359-d0d5-409d-a62f-fdad7a3f1a99",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/allwallets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"allwallets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-UserId",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQ3OTc0NDYsImlkIjoiMDNjODE1OTEtMWY2My00NjUzLThjMDMtMmExNDZhZDZlZTJiIiwibG9naW4iOiJzaHV4YSJ9._hdOCDpUxG9Pien8E8xMcj06HrUjK_4eqY98z2bx-5g",
+						"type": "text"
+					},
+					{
+						"key": "X-UserId",
+						"value": "sdfdsfdsfsfdsdfd",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/hello?name=Abrorbek",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Abrorbek"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get wallet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-UserId",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQ3OTg1OTUsImlkIjoiMDRkMTAzMTctOGUxYi00MGI0LWE1MDUtNmVjNTFlYzlhZTQ1IiwibG9naW4iOiJKdXJheWV2In0.Wn5bZajyU7oLOH3RrjpMB1fzmmTd-hw1dGvhLFMbEoM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "walletId",
+							"value": "e03c4339-008c-4e52-951c-003a55f44442",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/getwallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"getwallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add money",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-UserId",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQ3OTg1OTUsImlkIjoiMDRkMTAzMTctOGUxYi00MGI0LWE1MDUtNmVjNTFlYzlhZTQ1IiwibG9naW4iOiJKdXJheWV2In0.Wn5bZajyU7oLOH3RrjpMB1fzmmTd-hw1dGvhLFMbEoM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "walletId",
+							"value": "e03c4339-008c-4e52-951c-003a55f44442",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "300",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/addmoney",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"addmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove money",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-UserId",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQ3OTg1OTUsImlkIjoiMDRkMTAzMTctOGUxYi00MGI0LWE1MDUtNmVjNTFlYzlhZTQ1IiwibG9naW4iOiJKdXJheWV2In0.Wn5bZajyU7oLOH3RrjpMB1fzmmTd-hw1dGvhLFMbEoM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "walletId",
+							"value": "e03c4339-008c-4e52-951c-003a55f44442",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "1200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/removemoney",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"removemoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment history",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-UserId",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQ3OTg1OTUsImlkIjoiMDRkMTAzMTctOGUxYi00MGI0LWE1MDUtNmVjNTFlYzlhZTQ1IiwibG9naW4iOiJKdXJheWV2In0.Wn5bZajyU7oLOH3RrjpMB1fzmmTd-hw1dGvhLFMbEoM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "walletId",
+							"value": "e03c4339-008c-4e52-951c-003a55f44442",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/paymenthistory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"paymenthistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "shuxa",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234566",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Shuxrat",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Jurayev",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "shuxa",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "shuxa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234566",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "type",
+							"value": "identified",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/createwallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"createwallet"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.globals.set(\"variable_key\", \"variable_value\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

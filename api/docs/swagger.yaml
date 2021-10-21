@@ -1,0 +1,48 @@
+definitions:
+  models.ErrorMessage:
+    properties:
+      message:
+        type: string
+    type: object
+  models.LoginUser:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  models.SuccessMessage:
+    properties:
+      message:
+        type: string
+      token:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/login:
+    post:
+      description: use username and password to login
+      parameters:
+      - description: login info
+        in: body
+        name: login
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessMessage'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorMessage'
+      summary: login to the system
+      tags:
+      - Auth
+swagger: "2.0"

@@ -1,5 +1,4 @@
 # E-wallet
-e-wallet for a financial institution
 ### Docker users setup
 1) #### Clone the projet
 2) #### run docker-compose up 
@@ -15,3 +14,4 @@ e-wallet for a financial institution
 ### Testing
 1) You can use postman ( postman collection given project directory )
 2) Or you can use swagger in http://localhost/swagger/index.html (Not finished)
+

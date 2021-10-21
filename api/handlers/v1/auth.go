@@ -11,7 +11,14 @@ import (
 	"net/http"
 	"time"
 )
-
+// @Tags Auth
+// @Description use username and password to login
+// @Summary login to the system
+// @Produce json
+// @Param login body models.LoginUser true "login info"
+// @Success 200 {object} models.SuccessMessage
+// @Success 400 {object} models.ErrorMessage
+// @Router /v1/login [POST]
 func (h *handlerv1) Login(c *gin.Context)  {
 	username:=c.PostForm("username")
 	password:=c.PostForm("password")

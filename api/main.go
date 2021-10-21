@@ -1,9 +1,12 @@
 package api
 
 import (
+	_ "github.com/abrorbeksoft/e-wallet.git/api/docs"
 	v1 "github.com/abrorbeksoft/e-wallet.git/api/handlers/v1"
 	"github.com/abrorbeksoft/e-wallet.git/storage"
 	"github.com/gin-gonic/gin"
+	"github.com/swaggo/files"       // swagger embed files
+	"github.com/swaggo/gin-swagger" // gin-swagger middleware
 	"net/http"
 )
 
@@ -40,5 +43,6 @@ func New(options *RouterOptions) *gin.Engine {
 		apiV1.POST("/paymenthistory", v1.Auth(), handlerV1.GetMonthlyPayment)
 	}
 
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	return router
 }

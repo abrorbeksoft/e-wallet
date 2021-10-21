@@ -6,7 +6,7 @@ import (
 )
 
 func (h *handlerv1) AllWallets(c *gin.Context)  {
-	id:=c.PostForm("userId")
+	id:=c.MustGet("userId").(string)
 	res:=h.Storage.AllWallets(id)
 	c.JSON(http.StatusOK, res)
 }

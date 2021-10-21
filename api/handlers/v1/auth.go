@@ -31,7 +31,7 @@ func (h *handlerv1) Login(c *gin.Context)  {
 	}
 
 	if err:=bcrypt.CompareHashAndPassword([]byte(user.Password),[]byte(password)); err==nil {
-		tokenString,_:=h.GenerateToken(user.Username,user.Id)
+		tokenString,_:=GenerateToken(user.Username,user.Id)
 		c.JSON(http.StatusOK,gin.H{
 			"message": "ok",
 			"token": tokenString,
@@ -76,7 +76,7 @@ func (h *handlerv1) Register(c *gin.Context)  {
 		fmt.Println(err)
 	}
 
-	tokenString, _:=h.GenerateToken(username,id)
+	tokenString, _:=GenerateToken(username,id)
 	fmt.Println(id)
 	c.JSON(http.StatusOK,gin.H{
 		"message":"ok",
@@ -86,7 +86,7 @@ func (h *handlerv1) Register(c *gin.Context)  {
 }
 
 
-func (h *handlerv1) ExtractClaims(tokenStr string) (jwt.MapClaims,error) {
+func ExtractClaims(tokenStr string) (jwt.MapClaims,error) {
 	var (
 		token *jwt.Token
 		err error
@@ -106,7 +106,7 @@ func (h *handlerv1) ExtractClaims(tokenStr string) (jwt.MapClaims,error) {
 	return claims, nil
 }
 
-func (h *handlerv1) GenerateToken(login, id string) (string,error) {
+func GenerateToken(login, id string) (string,error) {
 
 	token:=jwt.New(jwt.SigningMethodHS256)
 	claims := token.Claims.(jwt.MapClaims)

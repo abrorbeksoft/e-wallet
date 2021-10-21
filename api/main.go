@@ -41,6 +41,7 @@ func New(options *RouterOptions) *gin.Engine {
 		apiV1.POST("/addmoney",  v1.Auth(), handlerV1.AddMoney)
 		apiV1.POST("/removemoney", v1.Auth(), handlerV1.RemoveMoney)
 		apiV1.POST("/paymenthistory", v1.Auth(), handlerV1.GetMonthlyPayment)
+		apiV1.POST("/createwallet", v1.Auth(), handlerV1.CreateWallet)
 	}
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))

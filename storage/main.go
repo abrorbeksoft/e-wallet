@@ -18,6 +18,22 @@ func NewStorage(session *sql.DB) StorageI {
 	}
 }
 
+func (d *dbRepo) CreateWallet(wallet *models.CreateWallet, userId string) (string, error) {
+	var id string
+	err:=d.session.QueryRow("INSERT INTO wallets " +
+		"(id, type,amount,user_id,created_at,updated_at) " +
+		"values (gen_random_uuid(),$1,0,$2,now(),now()) returning id",wallet.Type,userId).Scan(&id)
+
+	if err != nil {
+		fmt.Println(err)
+		return "", nil
+	}
+
+	return id,nil
+}
+
+
+
 func (d *dbRepo) Hello(message string) string {
 	var count int32
 	d.session.QueryRow("SELECT count(id) FROM users").Scan(&count)

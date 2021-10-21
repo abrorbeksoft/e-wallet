@@ -8,3 +8,7 @@ type Wallet struct {
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
 }
+
+type CreateWallet struct {
+	Type string `json:"type"`
+}

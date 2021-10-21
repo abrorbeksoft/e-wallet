@@ -14,3 +14,11 @@ services:
       - ./runtime/postgresql:/var/lib/postgresql/data
     ports:
       - 5432:5432
+
+  admin:
+    container_name: e-wallet-admin
+    image: adminer
+    depends_on:
+      -  db
+    ports:
+      - "8181:8080"

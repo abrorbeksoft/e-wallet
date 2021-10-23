@@ -35,7 +35,7 @@ func New(options *RouterOptions) *gin.Engine {
 		apiV1.POST("/login",handlerV1.Login)
 		apiV1.POST("/register",handlerV1.Register)
 
-		apiV1.GET("/hello", v1.Auth(), handlerV1.Hello)
+		apiV1.GET("/hello", handlerV1.Hello)
 		apiV1.POST("/allwallets", v1.Auth(),handlerV1.AllWallets)
 		apiV1.POST("/getwallet", v1.Auth(), handlerV1.GetWallet)
 		apiV1.POST("/addmoney",  v1.Auth(), handlerV1.AddMoney)

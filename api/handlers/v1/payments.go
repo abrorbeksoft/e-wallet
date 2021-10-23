@@ -8,6 +8,8 @@ import (
 )
 
 func (h *handlerv1) AddMoney(c *gin.Context)  {
+	c.Param("")
+	//c.ShouldBindJSON("")
 	walletId := c.PostForm("walletId")
 	amount := cast.ToInt64(c.PostForm("amount"))
 	status,message:=h.Storage.AddMoney(walletId,amount)
